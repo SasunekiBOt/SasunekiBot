@@ -11,7 +11,7 @@ db.defaults({ DataBase:  []})
 const client = new Discord.Client();
 
 var prefix = "s!";
-var token ="process.env.TOKEN";
+var token =(process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
