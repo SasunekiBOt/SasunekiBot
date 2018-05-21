@@ -428,7 +428,7 @@ client.on('message', message => {
                             .setColor("#ffa500")
                             .setThumbnail(message.author.avatarURL)
                             .addField("_ _","_ _")
-                            .addField(message.author.username + "vous a fait un sondage, veuillez voter !","_ _")
+                            .addField(message.author.username + " a fait un sondage, veuillez voter !","_ _")
                             .addField("- " + thingToEcho,"_ _")
                             .setFooter("© SasunekiBot, 2018 | By Glazko")
                             .setTimestamp()
