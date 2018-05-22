@@ -78,7 +78,7 @@ client.on('message', message => {
             }
             
             if(message.content === 'listbot') {
-                message.channel.send(client.users.size + " || " + client.guilds.size)
+                message.channel.send("Il y a " + client.users.size + "membres connectés || " + client.guilds.size + "guilds !")
                 message.delete()
     
                 }
@@ -121,6 +121,7 @@ client.on('message', message => {
             .setTitle("🦊 SasunekiBot | 8ball")
             .addField("_ _","_ _")
             .addField("La question est celle ci :", tte)
+            .addField("_ _","_ _")
             .addField("Voici ma réponse :",reponse)
             .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
             message.channel.sendEmbed(embed)
@@ -147,9 +148,13 @@ client.on('message', message => {
                 const embed = new Discord.RichEmbed()
                  .setColor("#ffa500")
                  .addField("Un utilisateur a été ban !", "Un utilisateur a été banni " + member.user.tag)
+                 .addField("_ _","_ _")
                  .addField("Modérateurs ou Administrateur qui a ban : ", `${message.author}`)
+                 .addField("_ _","_ _")
                  .addField("Raison du ban :",bReason)
+                 .addField("_ _","_ _")
                  .addField("Heure du ban : ", message.createdAt)
+                 .addField("_ _","_ _")
                  .addField("Channel du ban : ", message.channel)
                  .setFooter("© SasunekiBot, 2018 | By Glazko")
                  message.member.guild.channels.find("name", "logs").send(embed)
@@ -193,56 +198,56 @@ client.on('message', message => {
                             if(message.content.startsWith(prefix + "mute"))
                         if(message.member.hasPermission("BAN_MEMBERS")) {
                     
-                            if(message.mentions.members.size > 0) {
+                            if(message.mentions.members.size > 0) {
                     
                     
-                                const muteRole = message.guild.roles.find("name", "Muted");
+                                const muteRole = message.guild.roles.find("name", "Muted");
                     
-                                if(message.mentions.members.first().roles.has(muteRole)) {
+                                if(message.mentions.members.first().roles.has(muteRole)) {
                     
-                                    message.reply(":warning: | L'utilisateur mentionner à déjà été mute !");
+                                    message.reply(":warning: | L'utilisateur mentionner à déjà été mute !");
                     
-                                    message.delete();
+                                    message.delete();
                     
-                                } else if(message.mentions.members.first().toString() == message.member.toString()) {
+                                } else if(message.mentions.members.first().toString() == message.member.toString()) {
                     
-                                    
+                                    
                     
-                                    message.channel.sendMessage(message.member.toString() + ":warning | Vous ne pouvez pas vous mute !");
+                                    message.channel.sendMessage(message.member.toString() + ":warning | Vous ne pouvez pas vous mute !");
                     
-                                    message.delete();
+                                    message.delete();
                     
-                                    
+                                    
                     
-                                } else {
+                                } else {
                     
-                                    message.mentions.members.first().addRole(muteRole);
+                                    message.mentions.members.first().addRole(muteRole);
                     
-                                    message.channel.sendMessage(message.mentions.members.first().toString() + " à bien été mute !");
+                                    message.channel.sendMessage(message.mentions.members.first().toString() + " à bien été mute !");
                     
-                                    message.delete();
+                                    message.delete();
                     
-                                }
+                                }
                     
                     
-                            } else {
+                            } else {
                     
-                                message.reply(":warning: | Veuillez mentionner un utilisateur valide !");
+                                message.reply(":warning: | Veuillez mentionner un utilisateur valide !");
                     
-                                message.delete();
+                                message.delete();
                     
-                            }
+                            }
                     
-                           } else {
+                           } else {
                     
-                            message.reply(":warning: | Vous n'avez pas la permission d'effectuer cette commande !");
+                            message.reply(":warning: | Vous n'avez pas la permission d'effectuer cette commande !");
                     
-                            message.delete();
+                            message.delete();
                     
                             module.exports = mute
-                           }
+                           }
                     
-                        }
+                        }
                     
                     
 
@@ -256,21 +261,21 @@ client.on('message', message => {
         .setThumbnail(message.author.avatarURL)
         .setTitle("🦊 SasunekiBot | Help")
         .addField("_ _","_ _")
-        .addField("**:hammer_pick: Les commandes utilitaires du bot.**","_ _")
+        .addField("**<:Discordlogo:440140970152165378> Utilitaires**","_ _")
         .addField("**s!help**","Permet de visualiser la commande que vous voyez actuellement.")
         .addField("**s!serveurinfo**","Permet de savoir des info sur ce serveur.")
         .addField("**s!bug**","Permet de report tout bug pouvant arriver.")
         .addField("**s!invite**","Permet d'acceder au lien pour inviter le bot !")
         .addField("**s!partenaires**","Permet de voir les merveilleux discord avec qui je suis partenaires !")
         .addField("_ _","_ _")
-        .addField("**:beginner: Les commandes administrative du bot.**","_ _")
-        .addField("**s!setConfig**","Permet de creer le channel logs prédisposer pour le bot et un rôle **Muted**.")
+        .addField("**<:maintenance:440140953525944330> Commandes de modérations**","_ _")
+        .addField("**s!setConfig**","Sa crée le rôle 'Muted' et le salon 'logs'.")
         .addField("**s!ban <@utilisateur> [raison]**","Permet de bannir un membre.") 
         .addField("**s!kick <@utilisateur> [raison]**","Permet d'expulser un membre.")
         .addField("**s!un/mute <@utilisateur>**", "In dev")
         .addField("**s!clear **", "In dev")
         .addField("_ _","_ _")
-        .addField("**:tada: Les commandes divers.**","_ _")
+        .addField("**<:Tux:311525888749600770> Les commandes divers.**","_ _")
         .addField("**s!avatar**", "Permet de voir ta photo de profil de plus prêt.")
         .addField("**s!8ball**", "Permet de jouer avec le bot et de lui poser des questions.")
         .addField("**s!sondage [Texte]**", "Permet de faire des sondages dans n'importe quel channel !")
@@ -304,10 +309,9 @@ client.on('message', message => {
                 .setTitle("🦊 SasunekiBot | Invite")
                 .setThumbnail(message.author.avatarURL)
                 .addField("_ _","_ _")
-                .addField("**Voici le lien pour inviter Sasuneki sur ton serveur :**","Amuse toi bien !")
-                .addField("_ _","_ _")
-                .addField("**Clique juste ici** 🤗","-> **[L'invitation du bot !](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
-                .addField("**Pour plus d'informations, contactez GlAzKo#0300** :smiley:","_ _")
+                .addField("**Voici le lien de SasunekiBot et du nouveau support !**","_ _")
+                .addField("_ _","**[SasunekiBot](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
+                .addField("*_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
                 .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                 message.channel.sendMessage(invite_embed)
                 message.delete()
