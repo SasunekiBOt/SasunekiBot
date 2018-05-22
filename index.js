@@ -41,13 +41,11 @@ client.on('message', message => {
           color: '#0a0a0a',
           ADD_REACTIONS: false, 
           SEND_MESSAGES: false})
-		if(message.guild.member.hasPermission("MANAGES_ROLES")) return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error); 
           message.delete()
     }
     
     if(message.content.startsWith(prefix + 'setConfig')) {   
     message.guild.createChannel('logs', 'logs');
-	    if(message.guild.member.hasPermission("MANAGES_ROLES")) return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error);  
     return message.channel.sendMessage(":warning: | La configuration du bot à bien été effectuer !")
     message.delete()
     }
