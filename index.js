@@ -20,11 +20,11 @@ client.on("ready", async () => {
 });
 
 //Bienvenue aurevoir
-client.on('guildMemberAdd', function (member) {
-    member.createDM().then(function (channel) {
-        return channel.send('**Bienvenue sur le serveur ! Amuse toi bien et au plaisir de te voir ! :smiley:**');
-    }).catch(console.error)
-})
+//client.on('guildMemberAdd', function (member) {
+ //   member.createDM().then(function (channel) {
+      //  return channel.send('**Bienvenue sur le serveur ! Amuse toi bien et au plaisir de te voir ! :smiley:**');
+  //  }).catch(console.error)
+//})
 
 client.on('guildMemberRemove', function (member) {
     member.createDM().then(function (channel) {
@@ -122,7 +122,7 @@ client.on('message', message => {
             .addField("_ _","_ _")
             .addField("La question est celle ci :", tte)
             .addField("Voici ma réponse :",reponse)
-            .setFooter("© SasunekiBot, 2018 | By Glazko")
+            .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
             message.channel.sendEmbed(embed)
             message.delete()
         }
@@ -182,7 +182,7 @@ client.on('message', message => {
                         .addField("Raison du kick :" , kReason)
                         .addField("Heure du kick : ", message.createdAt)
                         .addField("Channel du kick : ", message.channel)
-                        .setFooter("© SasunekiBot, 2018 | By Glazko")
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                          message.member.guild.channels.find("name", "logs").sendEmbed(embed)
                         message.delete();
                             });
@@ -274,7 +274,7 @@ client.on('message', message => {
         .addField("**s!avatar**", "Permet de voir ta photo de profil de plus prêt.")
         .addField("**s!8ball**", "Permet de jouer avec le bot et de lui poser des questions.")
         .addField("**s!sondage [Texte]**", "Permet de faire des sondages dans n'importe quel channel !")
-        .setFooter("© SasunekiBot, 2018 | By Glazko")
+        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
         message.channel.sendMessage(help_embed)
         message.delete()
         console.log("Un utilisateur a exécuté la commande : s!help et elle a fonctionnée.")
@@ -292,7 +292,7 @@ client.on('message', message => {
             .addField("**Jour de création**", "J'ai été creer le 12/05/18")
             .addField("_ _","_ _")
             .addField("**Voici mon préfix**", "Mon prefix est `" + prefix + "` !")
-            .setFooter("© SasunekiBot, 2018 | By Glazko")
+            .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
             message.channel.sendEmbed(embed)
             message.delete()
         
@@ -306,9 +306,9 @@ client.on('message', message => {
                 .addField("_ _","_ _")
                 .addField("**Voici le lien pour inviter Sasuneki sur ton serveur :**","Amuse toi bien !")
                 .addField("_ _","_ _")
-                .addField("**Clique sur le renard :smiley:**","-> **[🦊](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
+                .addField("**Clique juste ici** 🤗","-> **[L'invitation du bot !](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
                 .addField("**Pour plus d'informations, contactez GlAzKo#0300** :smiley:","_ _")
-                .setFooter("© SasunekiBot, 2018 | By Glazko")
+                .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                 message.channel.sendMessage(invite_embed)
                 message.delete()
                 console.log("Un utilisateur a exécuté la commande : s!invite et elle a fonctionnée.");
@@ -331,12 +331,12 @@ client.on('message', message => {
                         .setTitle("🦊 SasunekiBot | Partenaires")
                         .setThumbnail(message.author.avatarURL)
                         .addField("_ _","_ _")
-                        .addField("FreeSchool[FR] 2.1.0","Pour acceder au serveur faites : s!FreeSchool")
+                        .addField("FreeSchool[FR] 2.1.0","Faites : s!FreeSchool")
                         .addField("_ _","_ _")
-                        .addField("Support - YukiBot","Pour acceder au serveur faites : s!YukiBot")
+                        .addField("Support - YukiBot","Faites : s!YukiBot")
                         .addField("_ _","_ _")
-                        .addField("EdeN Company","Pour acceder au serveur faites : s!EdenCompany")
-                        .setFooter("© SasunekiBot, 2018 | By Glazko")
+                        .addField("EdeN Company","Faites : s!EdenCompany")
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                         message.channel.sendEmbed(partenaires_embed);
                         message.delete()
                         console.log("Un utilisateur a exécuté la commande : s!partenaires et elle a fonctionné.")
@@ -353,7 +353,7 @@ client.on('message', message => {
                         .addField("Vous apprendrez en fonction des profs présents et disponibles, tous expérimentés et motivés pour vous aider.  Des fonctionnalités peuvent être ajoutées à n'importe quel moment. Des bots sont présent pour la modération et l'occupation !","_ _")
                         .addField(":pushpin: En plus veuillez noter que vous aussi si vous souhaitez proposer un cours, vous pouvez en faire la demande au près du staff de Free School Fr !!","_ _")
                         .addField("Alors pourquoi tu rejoint pas le discord ?", "https://discord.gg/SxyUVjD")
-                        .setFooter("© SasunekiBot, 2018 | By Glazko")
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                         message.channel.sendEmbed(FreeSchool_embed);
                         message.delete()
                         console.log("Un utilisateur a exécuté la commande : s!FreeSchool et elle a fonctionné.")
@@ -372,7 +372,7 @@ client.on('message', message => {
                         .addField("_ _","_ _")
                         .addField("Voici les liens !","**[Support de Yuki](https://discord.gg/y4HFHUu)**")
                         .addField("_ _","**[Invite YukiBot](https://discordapp.com/api/oauth2/authorize?client_id=402497607282327553&permissions=-1&scope=bot)**")
-                        .setFooter("© SasunekiBot, 2018 | By Glazko")
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                         message.channel.sendEmbed(YukiBot_embed);
                         message.delete()
                         console.log("Un utilisateur a exécuté la commande : s!YukiBot et elle a fonctionné.")
@@ -395,7 +395,7 @@ client.on('message', message => {
                             .addField("_ _","_ _")
                             .addField("Voici les liens !","**[Support de EdenBot](https://discord.gg/RgF6Er4)**")
                             .addField("_ _","**[Invite EdenBot](https://discordapp.com/oauth2/authorize?client_id=418517710222393368&scope=bot&permissions=201718999)**")
-                        .setFooter("© SasunekiBot, 2018 | By Glazko")
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                         message.channel.sendEmbed(EdenCompany_embed);
                         message.delete()
                         console.log("Un utilisateur a exécuté la commande : s!EdenCompany et elle a fonctionné.")
@@ -414,7 +414,7 @@ client.on('message', message => {
                           .addField("**La région**", "La région du serveur est : " + message.guild.region)
                           .addField("**Tu as rejoint le :**", "Tu es venue le " + message.member.joinedAt)
                           .addField("**Nombres de membres sur le Discord :**", "On est actuellement : " + message.guild.memberCount)
-                          .setFooter("© SasunekiBot, 2018 | By Glazko")
+                          .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                           message.channel.sendEmbed(info_embed);
                           message.delete()
                          console.log("Un utilisateur a exécuté la commande : s!info et elle a fonctionné.")
@@ -430,7 +430,7 @@ client.on('message', message => {
                             .addField("_ _","_ _")
                             .addField(message.author.username + " a fait un sondage, veuillez voter !","_ _")
                             .addField("- " + thingToEcho,"_ _")
-                            .setFooter("© SasunekiBot, 2018 | By Glazko")
+                            .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                             .setTimestamp()
                             message.delete()
                             message.channel.sendEmbed(sondage_embed)
