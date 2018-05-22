@@ -268,7 +268,7 @@ client.on('message', message => {
         .addField("**s!invite**","Permet d'acceder au lien pour inviter le bot !")
         .addField("**s!partenaires**","Permet de voir les merveilleux discord avec qui je suis partenaires !")
         .addField("_ _","_ _")
-        .addField("**<:DiscordStaff:328620818688901120> Commandes de modérations**","_ _")
+        .addField("**<:maintenance:440140953525944330> Commandes de modérations**","_ _")
         .addField("**s!setConfig**","Sa crée le rôle 'Muted' et le salon 'logs'.")
         .addField("**s!ban <@utilisateur> [raison]**","Permet de bannir un membre.") 
         .addField("**s!kick <@utilisateur> [raison]**","Permet d'expulser un membre.")
