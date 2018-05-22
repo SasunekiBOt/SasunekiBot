@@ -268,7 +268,7 @@ client.on('message', message => {
         .addField("_ _","_ _")
         .addField("**<:maintenance:440140953525944330> Modérations**","*setConfig | ban | kick | unmute | mute | clear*")
         .addField("_ _","_ _")
-        .addField("**<:bestDonutEver:435034512926179359> Fun**","*avatar | 8ball | sondage [Texte]*")
+        .addField("**:space_invader: Fun**","*avatar | 8ball | sondage [Texte]*")
         message.channel.sendMessage(help_embed)
         message.delete()
         console.log("Un utilisateur a exécuté la commande : s!help et elle a fonctionnée.")
@@ -278,7 +278,7 @@ client.on('message', message => {
     if(message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor("#ffa500")
-        .addField("**<:blue:445589042852003850> Invite**","_ _")
+        .addField("**<:emojidiscordlogobot:448182147086417921> Invite**","_ _")
         .addField("_ _","**[SasunekiBot](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
         .addField("_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
         .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
