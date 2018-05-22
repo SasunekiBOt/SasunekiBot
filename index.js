@@ -262,28 +262,29 @@ client.on('message', message => {
         .setTitle("🦊 SasunekiBot | Help")
         .addField("_ _","_ _")
         .addField("**<:Discordlogo:440140970152165378> Utilitaires**","_ _")
-        .addField("**s!help**","Permet de visualiser la commande que vous voyez actuellement.")
         .addField("**s!serveurinfo**","Permet de savoir des info sur ce serveur.")
         .addField("**s!bug**","Permet de report tout bug pouvant arriver.")
-        .addField("**s!invite**","Permet d'acceder au lien pour inviter le bot !")
         .addField("**s!partenaires**","Permet de voir les merveilleux discord avec qui je suis partenaires !")
         .addField("_ _","_ _")
-        .addField("**<:maintenance:440140953525944330> Commandes de modérations**","_ _")
-        .addField("**s!setConfig**","Sa crée le rôle 'Muted' et le salon 'logs'.")
-        .addField("**s!ban <@utilisateur> [raison]**","Permet de bannir un membre.") 
-        .addField("**s!kick <@utilisateur> [raison]**","Permet d'expulser un membre.")
-        .addField("**s!un/mute <@utilisateur>**", "In dev")
-        .addField("**s!clear **", "In dev")
+        .addField("**<:maintenance:440140953525944330> Modérations**","*setConfig | ban | kick | unmute | mute | clear*")
         .addField("_ _","_ _")
-        .addField("**<:checkup:445149489515462658> Les commandes divers.**","_ _")
-        .addField("**s!avatar**", "Permet de voir ta photo de profil de plus prêt.")
-        .addField("**s!8ball**", "Permet de jouer avec le bot et de lui poser des questions.")
-        .addField("**s!sondage [Texte]**", "Permet de faire des sondages dans n'importe quel channel !")
-        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
+        .addField("**<:bestDonutEver:435034512926179359> Fun**","*avatar | 8ball | sondage [Texte]*")
         message.channel.sendMessage(help_embed)
         message.delete()
         console.log("Un utilisateur a exécuté la commande : s!help et elle a fonctionnée.")
         
+    }
+
+    if(message.content === prefix + "help"){
+        var help_embed = new Discord.RichEmbed()
+        .setColor("#ffa500")
+        .addField("<:emojidiscordlogobot:448182147086417921> Invite")
+        .addField("_ _","**[SasunekiBot](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
+        .addField("*_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
+        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
+        message.channel.sendMessage(help_embed)
+        message.delete()
+        console.log("Un utilisateur a exécuté la commande : s!help et elle a fonctionnée.")
     }
 
           if(message.content === prefix + "Sasuneki") {
