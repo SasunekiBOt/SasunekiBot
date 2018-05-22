@@ -67,15 +67,6 @@ client.on('message', message => {
         message.channel.send(embed)
         message.delete()
         }
-        if(message.content === 'Bonjour') {
-            message.channel.send('Bien le bonjour, comment ça va ? :smiley:')
-        }
-
-         if(message.content === 'Ca va ?') {
-            message.channel.send('Bien et toi ?')
-            message.delete()
-
-            }
             
             if(message.content === 'listbot') {
                 message.channel.send("Il y a " + client.users.size + "membres connectés || " + client.guilds.size + "guilds !")
@@ -266,9 +257,16 @@ client.on('message', message => {
         .addField("**s!bug**","Permet de report tout bug pouvant arriver.")
         .addField("**s!partenaires**","Permet de voir les merveilleux discord avec qui je suis partenaires !")
         .addField("_ _","_ _")
-        .addField("**<:maintenance:440140953525944330> | Modérations**","*setConfig | ban | kick | unmute | mute | clear*")
+        .addField("**<:maintenance:440140953525944330> | Modérations**","_ _")
+	.addField("**s!setConfig**","Permet d'installer comme il faut le bot.")
+	.addField("**s!ban <@utilisateur> [Raison]**","Permet de ban un utilisateur.")
+	.addField("**s!kick <@utilisateur> [Raison]**","Permet de kick un utilisateur.")
+	.addField("**s!un/mute <@utilisateur>**","Permet de unmute ou mute un utilisateur.")
         .addField("_ _","_ _")
-        .addField("**:space_invader: | Fun**","*avatar | 8ball | sondage [Texte]*")
+        .addField("**:space_invader: | Fun**","_ _")
+	.addField("**s!8ball [Texte]**","Permet de jouer et de poser des questions au bot")
+	.addField("**s!sondage [Texte]**","Permet de faire un sondage grâce au bot.")
+	.addField("**s!avatar**","Permet de voir ta photo de profil de plus près.")
         message.channel.sendMessage(help_embed)
         message.delete()
         console.log("Un utilisateur a exécuté la commande : s!help et elle a fonctionnée.")
