@@ -278,9 +278,9 @@ client.on('message', message => {
     if(message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor("#ffa500")
-        .addField("<:emojidiscordlogobot:448182147086417921> Invite")
+        .addField("**<:blue:445589042852003850> Invite**","_ _")
         .addField("_ _","**[SasunekiBot](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
-        .addField("*_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
+        .addField("_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
         .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
         message.channel.sendMessage(help_embed)
         message.delete()
