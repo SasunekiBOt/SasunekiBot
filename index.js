@@ -138,7 +138,7 @@ client.on('message', message => {
             banMember.ban().then(member => {
                 const embed = new Discord.RichEmbed()
                  .setColor("#ffa500")
-                 .addField("Un utilisateur a été ban !", "Un utilisateur a été banni " + member.user.tag)
+                 .addField("Un utilisateur a été ban !", "L'utilisateur banni " + member.user.tag)
                  .addField("_ _","_ _")
                  .addField("Modérateurs ou Administrateur qui a ban : ", `${message.author}`)
                  .addField("_ _","_ _")
@@ -173,10 +173,14 @@ client.on('message', message => {
                     kickMember.kick().then(member => {
                         const embed = new Discord.RichEmbed()
                          .setColor("#ffa500")
-                        .addField("Un utilisateur a été kick !", "Un utilisateur a été kick " + member.user.tag)
+                        .addField("Un utilisateur a été kick !", "L'utilisateur kick " + member.user.tag)
+                        .addField("_ _","_ _")
                         .addField("Modérateurs ou Administrateur qui a kick : ", `${message.author}`)
+                        .addField("_ _","_ _")
                         .addField("Raison du kick :" , kReason)
+                        .addField("_ _","_ _")
                         .addField("Heure du kick : ", message.createdAt)
+                        .addField("_ _","_ _")
                         .addField("Channel du kick : ", message.channel)
                         .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                          message.member.guild.channels.find("name", "logs").sendEmbed(embed)
@@ -442,6 +446,33 @@ client.on('message', message => {
                         });
                     }
                 
+                    if(cmd === `${prefix}warn`){
+
+                        let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+                        if(!rUser) return message.channel.send(":warning: | Je ne trouve personne !");
+                        let reason = args.join(" ").slice(22);
+
+                        let warnEmbed = new Discord.RichEmbed()
+                        .setColor("#ffa500")
+                        .addField("Un utilisateur a été warn", `${rUser} avec ID: ${rUser.id}`)
+                        .addField("_ _","_ _")
+                        .addField("Raison du warn", reason)
+                        .addField("_ _","_ _")
+                        .addField("Modérateurs ou Administrateur qui a warn : ", `${message.author}`)
+                        .addField("_ _","_ _")
+                        .addField("Heure du warn : ", message.createdAt)
+                        .addField("_ _","_ _")
+                        .addField("Channel du warn : ", message.channel)
+                        .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
+
+                        let warnchannel = message.guild.channels.find(`name`, "logs");
+                        if(!warnchannel) return message.guild.send(":warning: | Je ne trouve pas le channel 'logs' !");
+
+                        message.delete().catch(O_o=>{});
+                        warnchannel.send(warnEmbed);
+                        
+                        return;
+                    }
                     
                   //   client.on('message', (msg) => {
 
