@@ -255,6 +255,7 @@ client.on('message', message => {
         .addField("**<:Discordlogo:440140970152165378> | Utilitaires**","_ _")
         .addField("**s!serveurinfo**","Permet de savoir des info sur ce serveur.")
         .addField("**s!bug**","Permet de report tout bug pouvant arriver.")
+	.addField("**s!invite**","Permet d'inviter le bot sur ton serveur.")
         .addField("**s!partenaires**","Permet de voir les merveilleux discord avec qui je suis partenaires !")
         .addField("_ _","_ _")
         .addField("**<:maintenance:440140953525944330> | Modérations**","_ _")
@@ -276,9 +277,7 @@ client.on('message', message => {
     if(message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor("#ffa500")
-        .addField("**<:emojidiscordlogobot:448182147086417921> | Invite**","_ _")
-        .addField("_ _","**[SasunekiBot](https://discordapp.com/api/oauth2/authorize?client_id=444585695177342980&permissions=272104647&scope=bot)**")
-        .addField("_ _","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
+        .addField("**<:emojidiscordlogobot:448182147086417921> | Invite**","**[SasunekiBot || Support](https://discord.gg/hMbyJg3)**")
         .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
         message.channel.sendMessage(help_embed)
         message.delete()
