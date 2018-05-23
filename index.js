@@ -69,7 +69,7 @@ client.on('message', message => {
         }
             
             if(message.content === 'listbot') {
-                message.channel.send("Il y a " + client.users.size + "membres connectés || " + client.guilds.size + "guilds !")
+                message.channel.send("Il y a " + client.users.size + " membres connectés || " + client.guilds.size + "guilds !")
                 message.delete()
     
                 }
