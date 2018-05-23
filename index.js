@@ -446,7 +446,13 @@ client.on('message', message => {
                         });
                     }
                 
-    
+    Client.on("message", function(message) {
+  if (message.content.split(" ")[0] == prefix + "say")
+  {
+      message.delete().catch(function() {return 0});
+      return message.channel.send(message.content.split(" ").splice(1).join(" ")).catch(function() {return 0});
+  }
+});
                   //   client.on('message', (msg) => {
 
                       //   if(msg.channel.name == "verification"){
