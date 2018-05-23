@@ -413,7 +413,6 @@ client.on('message', message => {
       message.delete().catch(function() {return 0});
       return message.channel.send(message.content.split(" ").splice(1).join(" ")).catch(function() {return 0});
   }
-});
 
                         if(message.content === prefix + "serveurinfo"){
                          var info_embed = new Discord.RichEmbed()
