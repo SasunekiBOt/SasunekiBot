@@ -116,20 +116,7 @@ client.on('message', message => {
             message.channel.sendEmbed(embed)
             message.delete()
         }
- if(message.content.startsWith("")) {
-  if((message.channel.name == "vcs-sasuneki")||(message.channel.name == "vcs")){
-        
-                                var playervcs = new Discord.RichEmbed()
-                                .setColor(couleur[message.author.id].couleur)
-                                .setDescription(`_ _\n ${msg}`)
-                                .setThumbnail(`${image} `)
-                                .setAuthor(`${message.author.username}#${getvalueof.discriminator} • ${grade[message.author.id].grade} • ${getvalueof.id}`,`${message.author.avatarURL}`)
-                                .setFooter(`${message.guild} • ${message.guild.id}`)
-                                .setTimestamp()
-                                client.channels.findAll('name', 'vcs-sasuneki').map(a=>a.send(playervcs))
-                                client.channels.findAll('name', 'vcs').map(a=>a.send(playervcs))
-	                        messagz.delete()
-	  }
+
         //Ban et kick
         if(message.content.startsWith(prefix +'ban')){
             if (message.channel.type === "dm") return;
