@@ -42,7 +42,7 @@ client.on('message', message => {
           SEND_MESSAGES: false})
           message.delete()
     }
-    if(message.content.startsWith(" ")) {
+    if(message.content.startsWith("")) {
   if((message.channel.name == "vcs-sasuneki")||(message.channel.name == "vcs")){
         
                                 var playervcs = new Discord.RichEmbed()
