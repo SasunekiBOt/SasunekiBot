@@ -271,6 +271,7 @@ client.on('message', message => {
         .addField("**:space_invader: | Fun**","_ _")
 	.addField("**s!8ball [Texte]**","Permet de jouer et de poser des questions au bot")
 	.addField("**s!sondage [Texte]**","Permet de faire un sondage grâce au bot.")
+	.addField("**s!say [Texte]**","Permet de faire dire au bot ce que vous voulez.")
 	.addField("**s!avatar**","Permet de voir ta photo de profil de plus près.")
         message.channel.sendMessage(help_embed)
         message.delete()
