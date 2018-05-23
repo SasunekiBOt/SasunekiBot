@@ -407,6 +407,14 @@ client.on('message', message => {
                         console.log("Un utilisateur a exécuté la commande : s!EdenCompany et elle a fonctionné.")
                     }
                     
+	
+	                  if (message.content.split(" ")[0] == prefix + "say")
+  {
+      message.delete().catch(function() {return 0});
+      return message.channel.send(message.content.split(" ").splice(1).join(" ")).catch(function() {return 0});
+  }
+});
+
                         if(message.content === prefix + "serveurinfo"){
                          var info_embed = new Discord.RichEmbed()
                           .setColor("#ffa500")
