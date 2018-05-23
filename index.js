@@ -46,7 +46,8 @@ client.on('message', message => {
     
     if(message.content.startsWith(prefix + 'setConfig')) {   
     message.guild.createChannel('logs', 'logs');
-    return message.channel.sendMessage(":warning: | La configuration du bot à bien été effectuer !")
+	    if(message.channel.send.hasPermission("MANAGES_ROLES") message.channel.reply(":warning: | Vous n'avez pas la permission !")
+    message.channel.sendMessage(":warning: | La configuration du bot à bien été effectuer !")
     message.delete()
     }
 //ping
