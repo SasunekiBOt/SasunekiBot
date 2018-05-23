@@ -15,7 +15,7 @@ var token =(process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setActivity(" s!help || " + client.guilds.size + " guilds || " + client.users.size + " users");
+    client.user.setActivity(" Sasuneki || s!help || " + client.guilds.size + " guilds || " + client.users.size + " users");
 
 });
 
