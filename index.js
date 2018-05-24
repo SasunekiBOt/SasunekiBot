@@ -547,7 +547,17 @@ client.on('message', message => {
               //            salon.send("**Bienvenue @"+ member.user.username + "**"); 
                       
                       // });
-
+if (message.content.startsWith(prefix + "off")) {
+    if(message.author.id == "247344130798256130"){
+    message.reply("Arrêt en cours...");
+    console.log("BOT : [OFF]")
+    client.destroy();
+    process.exit()
+  } else {
+    message.channel.send(":warning: | Tu n'es pas le créateur du bot !")
+    
+    }
+}
                       
 });
                     
