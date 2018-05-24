@@ -26,11 +26,22 @@ client.on("ready", async () => {
   //  }).catch(console.error)
 //})
 
-client.on('guildMemberRemove', function (member) {
-    member.createDM().then(function (channel) {
-        return channel.send('**Au revoir, une bonne continuation à toi, bonne journée :wink:**');
-    }).catch(console.error)
-})
+//client.on('guildMemberRemove', function (member) {
+    //member.createDM().then(function (channel) {
+      //  return channel.send('**Au revoir, une bonne continuation à toi, bonne journée :wink:**');
+    //}).catch(console.error)
+//})
+client.on('message', function(message) {
+    if (message.content.startsWith(prefix + "clear")) {
+        if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.channel.fetchMessages()
+               .then(function(list){
+                    message.channel.bulkDelete(list);
+                }, function(err){message.channel.send(":warning: | Le clear n'a pas fonctionner !")})
+        }
+    }
+
+});
 
 client.on('message', message => {
 
@@ -42,6 +53,7 @@ client.on('message', message => {
           SEND_MESSAGES: false})
           message.delete()
     }
+    
     if(message.content.startsWith(prefix + 'setConfig')) {   
     message.guild.createChannel('logs', 'logs');   
     message.channel.sendMessage(":warning: | La configuration du bot à bien été effectuer !")
@@ -67,7 +79,7 @@ client.on('message', message => {
         }
             
             if(message.content === 'listbot') {
-                message.channel.send("Il y a " + client.users.size + " membres connectés || " + client.guilds.size + " guilds !")
+                message.channel.send("Il y a " + client.users.size + " membres connectés || " + client.guilds.size + "guilds !")
                 message.delete()
     
                 }
@@ -137,13 +149,9 @@ client.on('message', message => {
                 const embed = new Discord.RichEmbed()
                  .setColor("#ffa500")
                  .addField("Un utilisateur a été ban !", "L'utilisateur banni " + member.user.tag)
-                 .addField("_ _","_ _")
                  .addField("Modérateurs ou Administrateur qui a ban : ", `${message.author}`)
-                 .addField("_ _","_ _")
-                 .addField("Raison du ban :",bReason)
-                 .addField("_ _","_ _")
+                 .addField("Raison du ban :", bReason)
                  .addField("Heure du ban : ", message.createdAt)
-                 .addField("_ _","_ _")
                  .addField("Channel du ban : ", message.channel)
                  .setFooter("© SasunekiBot, 2018 | By Glazko")
                  message.member.guild.channels.find("name", "logs").send(embed)
@@ -172,13 +180,9 @@ client.on('message', message => {
                         const embed = new Discord.RichEmbed()
                          .setColor("#ffa500")
                         .addField("Un utilisateur a été kick !", "L'utilisateur kick " + member.user.tag)
-                        .addField("_ _","_ _")
                         .addField("Modérateurs ou Administrateur qui a kick : ", `${message.author}`)
-                        .addField("_ _","_ _")
                         .addField("Raison du kick :" , kReason)
-                        .addField("_ _","_ _")
                         .addField("Heure du kick : ", message.createdAt)
-                        .addField("_ _","_ _")
                         .addField("Channel du kick : ", message.channel)
                         .setFooter("© SasunekiBot, 2018 | By GlAzKo#0300")
                          message.member.guild.channels.find("name", "logs").sendEmbed(embed)
@@ -264,7 +268,8 @@ client.on('message', message => {
 	.addField("**s!setConfig**","Permet d'installer comme il faut le bot.")
 	.addField("**s!ban <@utilisateur> [Raison]**","Permet de ban un utilisateur.")
 	.addField("**s!kick <@utilisateur> [Raison]**","Permet de kick un utilisateur.")
-	.addField("**s!un/mute <@utilisateur>**","Permet de unmute ou mute un utilisateur.")
+    .addField("**s!un/mute <@utilisateur>**","Permet de unmute ou mute un utilisateur.")
+    .addField("**s!clear**","Permet de nettoyer un channel (+- 30 messages)")
         .addField("_ _","_ _")
         .addField("**:space_invader: | Fun**","_ _")
 	.addField("**s!8ball [Texte]**","Permet de jouer et de poser des questions au bot")
