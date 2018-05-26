@@ -45,6 +45,41 @@ client.on('message', function(message) {
 
 client.on('message', message => {
 
+	if(message.content.startWith(prefix + "combat")) {
+let combatMembre = message.guild.member(message.mentions.users.first());
+
+            var replys = [
+
+                "Tu as perdu le combat !",
+
+                "Tu as gagné le combat !"
+
+            ];
+
+
+            let reponse = (replys[Math.floor(Math.random() * replys.length)])
+
+            var embed = new Discord.RichEmbed()
+
+            .setColor("#ffa500")
+
+            .setTitle("Aroz | Combat")
+
+            .addField("_ _","_ _")
+
+            .addField(message.author.username + " a lancé un combat !)
+
+            .addField("_ _","_ _")
+
+            .addField("Le gagnant est :",reponse)
+
+            .setFooter("© Aroz, 2018 |  S Ξ Ɓ Λ S Ŧ | Σ η#0397")
+
+            message.channel.sendEmbed(embed)
+
+            message.delete()
+
+        }
         if(message.content.startsWith(prefix + 'setConfig')) {
       message.guild.createRole({
           name: 'Muted', 
